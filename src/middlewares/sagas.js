@@ -5,7 +5,9 @@ import * as api from '../utils/BooksAPI'
 import {
   FETCH_ALL_BOOKS,
   FETCH_ALL_BOOKS_SUCCESS,
-  CHANGE_BOOK_SHELF
+  CHANGE_BOOK_SHELF,
+  SEARCH_BOOKS,
+  SEARCH_BOOKS_SUCCESS
 } from '../constants/actionTypes'
 
 export function* fetchAllBooksHandler() {
@@ -31,9 +33,22 @@ export function* changeBookShelf() {
   yield takeEvery(CHANGE_BOOK_SHELF, changeBookShelfHandler)
 }
 
+export function* searchBooksHandler(action) {
+  const books = yield call(api.search, action.payload, 10)
+  yield put({
+    type: SEARCH_BOOKS_SUCCESS,
+    books
+  })
+}
+
+export function* searchBooks() {
+  yield takeEvery(SEARCH_BOOKS, searchBooksHandler)
+}
+
 export default function* rootSaga() {
   yield all([
     fetchAllBooks(),
-    changeBookShelf()
+    changeBookShelf(),
+    searchBooks(),
   ])
 }
