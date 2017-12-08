@@ -1,38 +1,38 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import { NONE } from '../constants/shelfTypes'
 import BookShelfChanger from './BookShelfChanger'
 
-class Book extends Component {
-  render() {
-    const { book, shelf } = this.props
+const Book = props => {
+  const { book, book: { title, authors, imageLinks }, shelf } = props
 
-    let thumbnail = undefined
-    if (book.imageLinks) {
-      thumbnail = book.imageLinks.thumbnail
+  let thumbnail = () => {
+    if (imageLinks) {
+      return imageLinks.thumbnail
     }
-
-    return (
-      <li>
-        <div className="book">
-          <div className="book-top">
-            <div
-              style={{
-                width: 128,
-                height: 192,
-                backgroundImage: `url(${thumbnail})`
-              }}
-              className="book-cover"
-            >
-            </div>
-            <BookShelfChanger book={book} shelf={shelf || NONE} />
-          </div>
-          <div className="book-title">{book.title}</div>
-          <div className="book-authors">{book.authors}</div>
-        </div>
-      </li>
-    )
+    // catch error, so users don't get an empty white box
+    return 'https://imageWithNoLinks/img1'
   }
+
+  return (
+    <li>
+      <div className="book">
+        <div className="book-top">
+          <div
+            style={{
+              width: 128,
+              height: 192,
+              backgroundImage: `url(${thumbnail()})`
+            }}
+            className="book-cover"
+          />
+          <BookShelfChanger book={book} shelf={shelf || NONE} />
+        </div>
+        <div className="book-title">{title}</div>
+        <div className="book-authors">{authors}</div>
+      </div>
+    </li>
+  )
 }
 
 export default Book

@@ -1,10 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import Book from './Book'
 
-class BookShelf extends Component {
-  renderBooks() {
-    const { shelf, books } = this.props
+const BookShelf = (props) => {
+  function renderBooks() {
+    const { shelf, books } = props
 
     return books
       .filter(book => book.shelf === shelf)
@@ -18,19 +18,16 @@ class BookShelf extends Component {
         )
       })
   }
-
-  render () {
-    return (
-      <div className="bookshelf">
-      <h2 className="bookshelf-title">{this.props.heading}</h2>
-      <div className="bookshelf-books">
-        <ol className="books-grid">
-          {this.renderBooks()}
-        </ol>
-      </div>
+  return (
+    <div className="bookshelf">
+    <h2 className="bookshelf-title">{props.heading}</h2>
+    <div className="bookshelf-books">
+      <ol className="books-grid">
+        {renderBooks()}
+      </ol>
     </div>
-    )
-  }
+  </div>
+  )
 }
 
 export default BookShelf
