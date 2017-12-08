@@ -22,12 +22,6 @@ npm install netlify-cli -g
 netlify deploy
 ```
 
-## License
-
-A Project [starter code](https://github.com/udacity/reactnd-project-myreads-starter) contributed by Udacity.
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-
 ## Acknowledgments
 ### What's included
 Within the download you'll find the following directories and files:
@@ -91,3 +85,9 @@ When fetching book list after changing a book shelf, it upates local state befor
 
 #### Deployment
 This App is deployed on [Netlify](https://www.netlify.com/)
+
+
+## License
+
+A Project [starter code](https://github.com/udacity/reactnd-project-myreads-starter) contributed by Udacity.
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
