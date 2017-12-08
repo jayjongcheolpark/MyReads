@@ -1,6 +1,5 @@
 import React from 'react'
 
-import { NONE } from '../constants/shelfTypes'
 import BookShelfChanger from './BookShelfChanger'
 
 const Book = props => {
@@ -26,7 +25,7 @@ const Book = props => {
             }}
             className="book-cover"
           />
-          <BookShelfChanger book={book} shelf={shelf || NONE} />
+          <BookShelfChanger book={book} shelf={shelf || book.shelf} />
         </div>
         <div className="book-title">{title}</div>
         <div className="book-authors">{authors}</div>

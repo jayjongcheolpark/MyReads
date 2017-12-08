@@ -4,14 +4,14 @@ import { connect } from 'react-redux'
 import * as shelfType from '../constants/shelfTypes'
 import { changeBookShelf } from '../actions'
 
-const BookShelfChanger = ({ book, shelf, changeBookShelf }) => {
+const BookShelfChanger = ({ book, changeBookShelf, shelf }) => {
   return (
     <div className="book-shelf-changer">
       <select
-        defaultValue={shelf}
+        defaultValue={shelf || shelfType.NONE}
         onChange={e => changeBookShelf(book, e.target.value)}
       >
-        <option value={shelf.NONE} disabled>
+        <option value={shelfType.NONE} disabled>
           Move to...
         </option>
         <option value={shelfType.CURRENTLY_READING}>Currently Reading</option>

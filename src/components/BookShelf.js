@@ -13,7 +13,6 @@ const BookShelf = (props) => {
           <Book
             key={book.id}
             book={book}
-            shelf={shelf}
           />
         )
       })

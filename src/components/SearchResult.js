@@ -2,24 +2,29 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import Book from './Book'
+import { NONE } from '../constants/shelfTypes'
+import { fetchAllBooks } from '../actions/index';
 
 class SearchResult extends Component {
-  render() {
-    const { books } = this.props
+  componentDidMount () {
+    this.props.fetchAllBooks()
+  }
 
+  render() {
+    const { books, searchedBooks } = this.props
     return (
       <div className="search-books-results">
         <ol className="books-grid">
-        {
-          books.map(book => {
+          {searchedBooks.map(searchedBook => {
+            let result = books.find(book => book.id === searchedBook.id)
             return (
               <Book
-                key={book.id}
-                book={book}
+                key={searchedBook.id}
+                book={searchedBook}
+                shelf={result ? result.shelf : NONE}
               />
             )
-          })
-        }
+          })}
         </ol>
       </div>
     )
@@ -28,8 +33,12 @@ class SearchResult extends Component {
 
 const mapStateToProps = state => {
   return {
-    books: state.searchedBooks
+    searchedBooks: state.searchedBooks,
+    books: state.books
   }
 }
 
-export default connect(mapStateToProps)(SearchResult)
+export default connect(
+  mapStateToProps,
+  { fetchAllBooks }
+)(SearchResult)
