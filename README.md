@@ -90,4 +90,3 @@ This App is deployed on [Netlify](https://www.netlify.com/)
 ## License
 
 A Project [starter code](https://github.com/udacity/reactnd-project-myreads-starter) contributed by Udacity.
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
