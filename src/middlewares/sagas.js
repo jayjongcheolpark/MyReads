@@ -12,7 +12,6 @@ import {
 
 export function* fetchAllBooksHandler() {
   const books = yield call(api.getAll)
-  console.log("saga: FETCH_ALL_BOOKS")
   yield put({
     type: FETCH_ALL_BOOKS_SUCCESS,
     books
@@ -25,7 +24,6 @@ export function* fetchAllBooks() {
 
 export function* changeBookShelfHandler(action) {
   yield call(api.update, action.payload.book, action.payload.shelf)
-  console.log("saga: CHANGE_BOOK_SHELF")
   yield put({
     type: FETCH_ALL_BOOKS
   })
