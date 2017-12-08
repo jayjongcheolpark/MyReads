@@ -6,6 +6,11 @@ import SearchBar from '../components/SearchBar'
 import SearchResult from '../components/SearchResult'
 
 class Search extends Component {
+
+  componentWillUnmount() {
+    this.props.clearSearchResult()
+  }
+
   throttledSearch = (query) => {
     if (query.trim() === "") {
       this.props.clearSearchResult()
@@ -13,11 +18,6 @@ class Search extends Component {
       this.props.searchBooks(query)
     }
   }
-
- componentWillUnmount() {
-    this.props.clearSearchResult()
-  }
-
 
   render () {
     return (
