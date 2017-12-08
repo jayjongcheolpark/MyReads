@@ -29,6 +29,41 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 
 ## Acknowledgments
+### What's included
+Within the download you'll find the following directories and files:
+
+```
+|-- package.json
+`-- src
+    |-- index.js
+    |-- store.js
+    |-- App.js
+    |-- actions
+    |   `-- index.js
+    |-- components
+    |   |-- Book.js  
+    |   |-- BookShelf.js
+    |   |-- BookShelfChanger.js
+    |   |-- SearchBar.js
+    |   `-- SearchResult.js
+    |-- constants
+    |   |-- actionTypes.js
+    |   `-- shelfTypes.js
+    |-- middlewares
+    |   `-- sagas.js
+    |-- pages
+    |   |-- ListBooks.js
+    |   `-- Search.js
+    |-- reducers
+    |   `-- index.js
+    |-- styles
+    |   |-- App.css
+    |   `-- index.css
+    `-- utils
+        |-- BooksAPI.js
+        `-- SearchTerm.js
+```
+ 
 ### Functionality (requirements)
 
 In this application, the main page(the root URL)displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:
