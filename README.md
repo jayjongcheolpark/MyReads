@@ -15,6 +15,9 @@ npm start
 
 ### Demo
 
+[https://jaypark-myreads.netlify.com/](https://jaypark-myreads.netlify.com/)
+
+
 ![Demo](https://thumbs.gfycat.com/OpenCorruptAsianporcupine-size_restricted.gif)
 
 ## Deployment
