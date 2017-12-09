@@ -15,7 +15,7 @@ npm start
 
 ### Demo
 
-![Demo](https://gfycat.com/ifr/OpenCorruptAsianporcupine)
+![Demo](https://thumbs.gfycat.com/OpenCorruptAsianporcupine-size_restricted.gif)
 
 ## Deployment
 
