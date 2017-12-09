@@ -13,6 +13,10 @@ npm install
 npm start
 ```
 
+### Demo
+
+![Demo](https://gfycat.com/gifs/detail/OpenCorruptAsianporcupine)
+
 ## Deployment
 
 ```
