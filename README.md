@@ -38,6 +38,7 @@ Within the download you'll find the following directories and files:
     |   |-- Book.js  
     |   |-- BookShelf.js
     |   |-- BookShelfChanger.js
+    |   |-- NotFound.js
     |   |-- SearchBar.js
     |   `-- SearchResult.js
     |-- constants
