@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './styles/App.css'
 
 import ListBooks from './pages/ListBooks';
 import Search from './pages/Search'
+import NotFound from './components/NotFound'
 
 class App extends Component {
   render () {
     return (
       <BrowserRouter>
-        <div>
+        <Switch>
           <Route exact path="/" component={ListBooks} />
-          <Route path="/search" component={Search} />
-        </div>
+          <Route exact path="/search" component={Search} />
+          <Route component={NotFound} />
+        </Switch>
       </BrowserRouter>
     )
   }

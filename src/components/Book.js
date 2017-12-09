@@ -10,7 +10,7 @@ const Book = props => {
       return imageLinks.thumbnail
     }
     // catch error, so users don't get an empty white box
-    return 'https://imageWithNoLinks/img1'
+    return `http://via.placeholder.com/128x192?text=${encodeURIComponent(title.trim())}`
   }
 
   return (
@@ -28,7 +28,7 @@ const Book = props => {
           <BookShelfChanger book={book} shelf={shelf || book.shelf} />
         </div>
         <div className="book-title">{title}</div>
-        <div className="book-authors">{authors}</div>
+        <div className="book-authors">{authors ? book.authors.join(', ') : ''}</div>
       </div>
     </li>
   )

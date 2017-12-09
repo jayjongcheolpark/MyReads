@@ -32,7 +32,7 @@ class SearchBar extends Component {
       suggestions: []
     }
 
-    this.changed = debounce(this.props.throttledSearch, 1000)
+    this.changed = debounce(this.props.throttledSearch, 300)
   }
 
   onChange = (event, { newValue }) => {
