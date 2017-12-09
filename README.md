@@ -75,13 +75,14 @@ In search page(`/search`), you can get the list of books as by your input keywor
 To use redux and redux-saga is easier to manage state and asynchronous things, more efficient to execute, simple to test, and better at handling failure.
 
 #### Throttling
-Throttling of 1000ms is applied to support live search. If not so, ajax call is too frequent.
+Throttling of 300ms is applied to support live search. If not so, ajax call is too frequent.
 
 #### Autocomplete
 This API allows users to use their restricted search keywords. [react-autosuggest](https://github.com/moroshko/react-autosuggest) is added to search a book easily.
 
 #### Optimistic Update
 When fetching book list after changing a book shelf, it upates local state before getting a response to show UI changes immediately.
+
 
 #### Deployment
 This App is deployed on [Netlify](https://www.netlify.com/)
